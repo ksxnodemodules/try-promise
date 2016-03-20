@@ -4,7 +4,7 @@
 
 	var handlePromise = (fn, args) => (resolve, reject) => {
 		try {
-			resolve(fn(...args));
+			resolve(args ? fn(...args) : fn());
 		} catch (error) {
 			reject(error);
 		}
